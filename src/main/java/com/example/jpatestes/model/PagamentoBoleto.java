@@ -1,6 +1,8 @@
 package com.example.jpatestes.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 
 @Entity
@@ -11,6 +13,7 @@ public class PagamentoBoleto {
 
     private Integer pedidoId;
 
+    @Enumerated(EnumType.STRING)
     private StatusPagamento status;
 
     private String codigoBarras;

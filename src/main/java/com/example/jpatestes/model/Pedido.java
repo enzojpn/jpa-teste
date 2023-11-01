@@ -1,6 +1,8 @@
 package com.example.jpatestes.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 
 import java.math.BigDecimal;
@@ -20,6 +22,7 @@ public class Pedido {
 
     private BigDecimal total;
 
+    @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
     public Integer getId() {
