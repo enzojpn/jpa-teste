@@ -1,9 +1,6 @@
 package com.example.jpatestes.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -22,9 +19,12 @@ public class Pedido {
 
     private BigDecimal total;
 
+
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
+    @Embedded
+    private EnderecoPedido enderecoPedido;
     public Integer getId() {
         return id;
     }
@@ -71,6 +71,14 @@ public class Pedido {
 
     public void setStatus(StatusPedido status) {
         this.status = status;
+    }
+
+    public EnderecoPedido getEnderecoPedido() {
+        return enderecoPedido;
+    }
+
+    public void setEnderecoPedido(EnderecoPedido enderecoPedido) {
+        this.enderecoPedido = enderecoPedido;
     }
 }
 
